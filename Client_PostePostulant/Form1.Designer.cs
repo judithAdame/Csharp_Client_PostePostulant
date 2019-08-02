@@ -66,6 +66,7 @@
             // 
             // buttonLangages
             // 
+            this.buttonLangages.Enabled = false;
             this.buttonLangages.Location = new System.Drawing.Point(35, 129);
             this.buttonLangages.Name = "buttonLangages";
             this.buttonLangages.Size = new System.Drawing.Size(152, 29);
@@ -85,6 +86,7 @@
             // 
             // buttonChercherPostes
             // 
+            this.buttonChercherPostes.Enabled = false;
             this.buttonChercherPostes.Location = new System.Drawing.Point(214, 129);
             this.buttonChercherPostes.Name = "buttonChercherPostes";
             this.buttonChercherPostes.Size = new System.Drawing.Size(139, 29);

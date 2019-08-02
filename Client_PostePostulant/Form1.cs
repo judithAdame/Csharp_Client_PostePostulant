@@ -16,11 +16,17 @@ namespace Client_PostePostulant
         public Form1()
         {
             InitializeComponent();
+            buttonGetAll.Enabled = true;
+            buttonLangages.Enabled = false;
+            buttonChercherPostes.Enabled = false;
         }
 
         private void ButtonGetAll_Click(object sender, EventArgs e)
         {
+            int i = 0;
             comboBoxGetAll.Items.Clear();
+            CheckedListBoxLangages.Items.Clear();
+            dataGridViewMatches.Rows.Clear();
             List<Candidate>.Enumerator liste = ClientCandidate.CallGetAll().GetEnumerator();
             ComboBoxItem item = null;
             while(liste.MoveNext())
@@ -32,6 +38,11 @@ namespace Client_PostePostulant
                     Langage = liste.Current.Langages
                 };
                 comboBoxGetAll.Items.Add(item);
+                i++;
+            }
+            if (i >= 1) { 
+                buttonLangages.Enabled = true;
+                buttonChercherPostes.Enabled = false;
             }
             comboBoxGetAll.SelectedIndex = 0;
         }
@@ -39,12 +50,24 @@ namespace Client_PostePostulant
         private void ButtonLangages_Click(object sender, EventArgs e)
         {
             CheckedListBoxLangages.Items.Clear();
+            dataGridViewMatches.Rows.Clear();
             List<string> liste = ((comboBoxGetAll.SelectedItem as ComboBoxItem).Langage).Split(',').ToList();
             foreach (string item in liste)
             {
-                CheckedListBoxLangages.Items.Add(item);                
+                CheckedListBoxLangages.Items.Add(item);
+            }
+            if (liste.First().Equals(""))
+            {
+                buttonLangages.Enabled = false;
+                buttonChercherPostes.Enabled = false;
+            }
+            else{
+                buttonLangages.Enabled = true;
+                buttonChercherPostes.Enabled = true;
+
             }
         }
+
         private void ButtonChercherPostes_Click(object sender, EventArgs e)
         {
             dataGridViewMatches.Rows.Clear();
