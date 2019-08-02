@@ -20,6 +20,7 @@ namespace Client_PostePostulant
 
         private void ButtonGetAll_Click(object sender, EventArgs e)
         {
+            comboBoxGetAll.Items.Clear();
             List<Candidate>.Enumerator liste = ClientCandidate.CallGetAll().GetEnumerator();
             ComboBoxItem item = null;
             while(liste.MoveNext())
@@ -36,16 +37,17 @@ namespace Client_PostePostulant
         }
 
         private void ButtonLangages_Click(object sender, EventArgs e)
-        {            
+        {
+            CheckedListBoxLangages.Items.Clear();
             List<string> liste = ((comboBoxGetAll.SelectedItem as ComboBoxItem).Langage).Split(',').ToList();
             foreach (string item in liste)
             {
                 CheckedListBoxLangages.Items.Add(item);                
             }
         }
-
         private void ButtonChercherPostes_Click(object sender, EventArgs e)
         {
+            dataGridViewMatches.Rows.Clear();
             string lPostulant = "";
             int i=1;
             int nbMatch = 0;
