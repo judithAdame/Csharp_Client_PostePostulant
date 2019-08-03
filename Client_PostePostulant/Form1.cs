@@ -82,10 +82,11 @@ namespace Client_PostePostulant
                     lPostulant += ",";
                 i++;
             }
-            dataGridViewMatches.ColumnCount = 3;
+            dataGridViewMatches.ColumnCount = 4;
             dataGridViewMatches.Columns[0].Name = "Id";
             dataGridViewMatches.Columns[1].Name = "Poste";
             dataGridViewMatches.Columns[2].Name = "Langages";
+            dataGridViewMatches.Columns[3].Name = "Courriel";
             List<Job>.Enumerator liste = ClientJob.CallGetJobByLangages(nbMatch, lPostulant).GetEnumerator();
             while (liste.MoveNext())
             {

@@ -16,5 +16,7 @@ namespace Client_PostePostulant
         public string Nom { get; set; }
         [DataMember]
         public string Langages { get; set; }
+        [DataMember]
+        public string Courriel { get; set; }
     }
 }

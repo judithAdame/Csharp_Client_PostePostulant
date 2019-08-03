@@ -10,11 +10,11 @@ namespace Client_PostePostulant
 {
     class ClientJob
     {
-        private static readonly string urlJob = "http://localhost:43741/WRestFul_Poste/webresources/service";
+        private static readonly string urlJob = "http://localhost:43741/WRestFul_PosteV2/webresources/service";
         private static JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
         public static List<Job> CallGetJobByLangages(int nbMatch, string lPostulant)
         {
-            string urlServ = "/postes/nbMatch/" + nbMatch + "/langages/" + lPostulant;
+            string urlServ = "/postes/nbMatch/" + nbMatch.ToString() + "/langages/" + lPostulant;
             WebClient webClient = new WebClient();
             string response = webClient.DownloadString(urlJob + urlServ);
             List<Job> liste = (List<Job>)jsonSerializer.Deserialize<List<Job>>(response);
