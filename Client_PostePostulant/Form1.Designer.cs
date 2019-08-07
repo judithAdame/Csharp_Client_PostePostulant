@@ -81,7 +81,7 @@
             this.dataGridViewMatches.Location = new System.Drawing.Point(214, 164);
             this.dataGridViewMatches.Name = "dataGridViewMatches";
             this.dataGridViewMatches.RowTemplate.Height = 24;
-            this.dataGridViewMatches.Size = new System.Drawing.Size(515, 259);
+            this.dataGridViewMatches.Size = new System.Drawing.Size(644, 259);
             this.dataGridViewMatches.TabIndex = 5;
             // 
             // buttonChercherPostes
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 450);
+            this.ClientSize = new System.Drawing.Size(870, 450);
             this.Controls.Add(this.buttonChercherPostes);
             this.Controls.Add(this.dataGridViewMatches);
             this.Controls.Add(this.buttonLangages);
