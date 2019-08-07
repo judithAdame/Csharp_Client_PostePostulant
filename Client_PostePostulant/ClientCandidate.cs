@@ -24,14 +24,16 @@ namespace Client_PosteCandidate
             WebClient webClient = new WebClient();
             string urlServ = "/postulants";
             string reponse = webClient.DownloadString(new Uri(urlCandidate + urlServ));
-            Console.WriteLine(reponse);
             var liste = (List<Candidate>)jsonSerializer.Deserialize<List<Candidate>>(reponse);
             return liste;
         }
         public static List<Candidate> CallGeCandidatetByLangages(int nbMatch, string lPostes)
         {
+
+            lPostes= lPostes.Replace("#", "%23");
             WebClient webClient = new WebClient();
             string urlServ = "/postulants/nbMatch/" + nbMatch + "/langages/" + lPostes;
+            Console.WriteLine(urlServ);
             string reponse = webClient.DownloadString(urlCandidate + urlServ);
             List<Candidate> liste = (List<Candidate>)jsonSerializer.Deserialize<List<Candidate>>(reponse);
             return liste;
