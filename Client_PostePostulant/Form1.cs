@@ -20,7 +20,7 @@ namespace Client_PostePostulant
             buttonLangages.Enabled = false;
             buttonChercherPostes.Enabled = false;
         }
-
+         
         private void ButtonGetAll_Click(object sender, EventArgs e)
         {
             int i = 0;
